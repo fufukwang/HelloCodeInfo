@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>音樂頻譜網頁</title>
+  <title>HelloCode.Info 網頁設計</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
   <style>
@@ -58,7 +58,7 @@
 </a>
     </div>
   </div>
-  <div class="section">
+  <div class="section" id="secind-view">
   這不是空白畫面~只是還沒完成而已
   </div>
   <div class="section" id="third-view">
