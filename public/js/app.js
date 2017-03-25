@@ -1,4 +1,9 @@
 var playing = false;
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
 function resizeCanvas(){                                                    
   var e = document.getElementById('canvas'); 
   e.setAttribute('width',window.innerWidth),e.setAttribute('height',window.innerHeight); 
@@ -121,4 +126,29 @@ $('input[type="text"], input[type="email"]')
     attachResize(textareas[i]);
   }
   
+
+  $('#contact-form').submit(function(){
+    var obj = {
+      'name'  : $('#your-name').val(),
+      'email' : $('#email').val(),
+      'note'  : $('#your-message').val(),
+    };
+    $.post('/contactus',obj,function(data){
+      console.log(data);
+      if(data.status>0){
+        $('#your-name,#email,#your-message').val('');
+        cla = 'success';
+        txt = '留言完成~';
+      } else {
+        cla = 'success';
+        txt = '錯誤!請稍後在試';
+      }
+      $('#contact-form').after('<div class="alert alert-'+cla+' alert-dismissable"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>'+txt+'</strong></div>');
+    },'json');
+    return false;
+  });
 })();
+
+
+
+

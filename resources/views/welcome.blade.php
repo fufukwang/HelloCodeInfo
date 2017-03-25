@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/css/app.css" />
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body> 
 <div id="fullpage">
@@ -28,18 +29,18 @@
   <p>Dear Fu,</p>
   <p>My
     <label for="your-name">name</label> is
-    <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)" required> and</p>
+    <input type="text" name="name" id="your-name" minlength="3" placeholder="(your name here)" required> and</p>
 
   <p>my
     <label for="email">email address</label> is
-    <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
+    <input type="email" name="email" id="email" placeholder="(your email address)" required>
   </p>
 
   <p> I have a
     <label for="your-message">message</label> for you,</p>
 
   <p>
-    <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
+    <textarea name="message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
   </p>
   <p>
     <button type="submit">

@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::post('/contactus', 'HelloCodeController@ContactUs');
+
+
+
+Route::group(['domain' => 'www.hellocode.info'], function() {
+	
+});
