@@ -3,50 +3,7 @@
   <title>HelloCode.Info 網頁設計</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-  <style>
-*{
-            margin: 0;
-            padding: 0;
-        }
-        #canvas{
-            display: block;
-        }
-#PlayBtn{color:#eee;position: absolute;bottom:30px;border: 3px solid #fff;
-    padding: 25px;
-    border-radius: 48px;}
-#first-view{
-  background: #000 url(minwt_bg.jpg) center center fixed no-repeat;
-  -moz-background-size: cover;
-  background-size: cover;
-}
-
-
-
-
-#third-view{
-  background: linear-gradient(49deg, #ffb75e, #ed8f03, #f7c90b);
-  background-size: 600% 600%;
-
-  -webkit-animation: third-bganimator 7s ease infinite;
-  -moz-animation: third-bganimator 7s ease infinite;
-  animation: third-bganimator 7s ease infinite;
-}
-@-webkit-keyframes third-bganimator {
-    0%{background-position:0% 96%}
-    50%{background-position:100% 5%}
-    100%{background-position:0% 96%}
-}
-@-moz-keyframes third-bganimator {
-    0%{background-position:0% 96%}
-    50%{background-position:100% 5%}
-    100%{background-position:0% 96%}
-}
-@keyframes third-bganimator { 
-    0%{background-position:0% 96%}
-    50%{background-position:100% 5%}
-    100%{background-position:0% 96%}
-}
-    </style>   
+  <link rel="stylesheet" type="text/css" href="/css/app.css" />
 </head>
 <body> 
 <div id="fullpage">
@@ -62,7 +19,43 @@
   這不是空白畫面~只是還沒完成而已
   </div>
   <div class="section" id="third-view">
-    留言系統待補 信箱:<a href="mailto:service@fufuk.com">service@fufuk.com</a>
+    
+
+
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+<form id="contact-form">
+  <p>Dear Fu,</p>
+  <p>My
+    <label for="your-name">name</label> is
+    <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)" required> and</p>
+
+  <p>my
+    <label for="email">email address</label> is
+    <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
+  </p>
+
+  <p> I have a
+    <label for="your-message">message</label> for you,</p>
+
+  <p>
+    <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
+  </p>
+  <p>
+    <button type="submit">
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+        <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+    l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+    </button>
+  </p>
+</form>
+
+
+
+
+
   </div>
 </div>
 
@@ -78,68 +71,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/scrolloverflow.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
     <script>
-var playing = false;
-function resizeCanvas(){                                                    
-  var e = document.getElementById('canvas'); 
-  e.setAttribute('width',window.innerWidth),e.setAttribute('height',window.innerHeight); 
-}
-function SoundMp3(e){
-  createjs.Sound.alternateExtensions = ['mp3'],createjs.Sound.registerSound( e,'sound') ,createjs.Sound.on('fileload',loadHandler);
-}
-function loadHandler(){
-  var t = createjs.Sound.activePlugin.context;analyserNode = t.createAnalyser(), 
-    analyserNode.fftSize = 2048,
-    analyserNode.connect(t.destination);
-  var a=createjs.Sound.activePlugin.dynamicsCompressorNode;
-    a.disconnect(),
-    a.connect(analyserNode),
-    freqByteData = new Uint8Array(analyserNode.frequencyBinCount);
-  for(var n=0;n <freqByteData.length;n ++ ){ 
-    var r = new createjs.Graphics();
-    r.beginFill('#fff'),
-    r.drawRect(0,-10, window.innerWidth/2048,20);
-    var i = new createjs.Shape(r);
-    stage.addChild(i),i.x =6*n,i.y=window.innerHeight/2,
-    soundArray.push(i);
-  }
-  createjs.Ticker.setFPS(60),createjs.Ticker.addEventListener('tick',handleTick);
-}
-function handleTick(){
-  analyserNode.getByteFrequencyData(freqByteData);
-  for(var e=0;e<freqByteData.length;e++) soundArray[e].scaleY = freqByteData[e]/5*-1;
-  stage.update();
-} 
-var analyserNode,
-  freqByteData,
-  canvas,
-  stage,
-  soundArray = [];
-  window.onresize = resizeCanvas, 
-  window.onload = function(){
-    resizeCanvas(),
-    SoundMp3('Monks.mp3'),
-    canvas = document.getElementById('canvas'),
-    stage  = new createjs.Stage(canvas);
-    var e  = new createjs.Bitmap('rsz_anh-phan-134368.jpg').set( {scaleX:1.2,scaleY :1.2} );
-    stage.addChild(e);
-  };        
-$(document).ready(function() {
-  $('#fullpage').fullpage({navigation:true});
-  $('#PlayBtn').bind('click',function(){
-    if(playing){
-      $(this).find('span').removeClass('glyphicon-pause');
-      $(this).find('span').addClass('glyphicon-play');
-      createjs.Sound.stop();
-      playing = false;
-    } else {
-      $(this).find('span').removeClass('glyphicon-play');
-      $(this).find('span').addClass('glyphicon-pause');
-      createjs.Sound.play('sound',{loop:-1,volume:.1});
-      playing = true;
-    }
-  });
-});
 
 
     </script>
