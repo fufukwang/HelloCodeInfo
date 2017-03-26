@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/css/app.css" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="google-site-verification" content="ETXKiATxE5AdvQCMbQrDR0pX7fCIClrUmS1X_IuCQRo" />
 </head>
 <body> 
 <div id="fullpage">
