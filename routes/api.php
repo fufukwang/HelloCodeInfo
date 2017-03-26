@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-
-Route::post('/deploy/testFrontend', 'DeployController@testFrontend');
+Route::group(['domain' => 'www.hellocode.info'], function() {
+	Route::post('/deploy/hellocode', 'DeployController@HelloCodeInfo');	
+});
