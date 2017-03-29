@@ -34,10 +34,6 @@
   </div>
   <div class="section" id="third-view">
     
-
-
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
 <form id="contact-form">
   <p>Dear Fu,</p>
   <p>My
