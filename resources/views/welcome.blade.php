@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>HelloCode.Info 網頁設計</title>
+  <title>Web Design,App Design</title>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/css/app.css" />
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="google-site-verification" content="ETXKiATxE5AdvQCMbQrDR0pX7fCIClrUmS1X_IuCQRo" />
@@ -18,7 +19,18 @@
     </div>
   </div>
   <div class="section" id="secind-view">
-  這不是空白畫面~只是還沒完成而已
+    <div class="content">
+      <div class="container wow fadeInUp delay-03s">
+        <div class="row">
+          <div class="logo text-center">
+            <h2>We are doing something new!! Comming Soon</h2>
+          </div>
+
+          <div id="countdown" data-date="May 31, 2017 18:00:00"></div>
+          <h2 class="subs-title text-center">We are welcome to write to us!!! </h2>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="section" id="third-view">
     
@@ -53,9 +65,6 @@
     </button>
   </p>
 </form>
-
-
-
 
 
   </div>
