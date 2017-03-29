@@ -19,5 +19,8 @@ Route::post('/contactus', 'HelloCodeController@ContactUs');
 
 
 Route::group(['domain' => 'www.hellocode.info'], function() {
-	
+	Route::post('/deploy/hellocode', 'DeployController@HelloCodeInfo');	
 });
+
+
+	

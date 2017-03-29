@@ -7,7 +7,7 @@ use Response;
 use App\Http\Controllers\Controller;
 
 
-class HelloCodeController extends Controller
+class DeployController extends Controller
 {
 
    public function HelloCodeInfo(Request $request){
