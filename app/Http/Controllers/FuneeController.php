@@ -23,7 +23,7 @@ class FuneeController extends Controller
 
 
     public function getRssUrl(){
-    	$guzzleClient = new Client();
+    	$guzzleClient = new \GuzzleHttp\Client();
 		$response = $guzzleClient->get('http://rss.cnn.com/rss/edition.rss');
 		$body = $response->getBody();
 		return $body;
