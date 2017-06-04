@@ -22,5 +22,7 @@ Route::group(['domain' => 'www.hellocode.info'], function() {
 	Route::post('/deploy/hellocode', 'DeployController@HelloCodeInfo');	
 });
 
-
-	
+Route::group(['domain' => 'funee.hellocode.info'], function() {
+	Route::get('/', 'FuneeController@index');
+	Route::get('/getRssUrl','FuneeController@getRssUrl');
+});
