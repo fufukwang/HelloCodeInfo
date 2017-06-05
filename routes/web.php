@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+if(App::environment('local')) {
+    $url = 'hello.dev';
+}else if(App::environment('production')) {
+    $url = 'hellocode.info';
+}else {
+    $url = '';
+}
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,11 +26,11 @@ Route::post('/contactus', 'HelloCodeController@ContactUs');
 
 
 
-Route::group(['domain' => 'www.hellocode.info'], function() {
+Route::group(['domain' => 'www.'.$url], function() {
 	Route::post('/deploy/hellocode', 'DeployController@HelloCodeInfo');	
 });
 
-Route::group(['domain' => 'funee.hellocode.info'], function() {
+Route::group(['domain' => 'funee.'.$url], function() {
 	Route::get('/', 'FuneeController@index');
-	Route::get('/getRssUrl','FuneeController@getRssUrl');
+	Route::post('/getRssUrl','FuneeController@getRssUrl');
 });

@@ -22,11 +22,17 @@ class FuneeController extends Controller
     }
 
 
-    public function getRssUrl(){
-    	$guzzleClient = new \GuzzleHttp\Client();
-		$response = $guzzleClient->get('http://rss.cnn.com/rss/edition.rss');
-		$body = $response->getBody();
-		return $body;
+    public function getRssUrl(Request $request){
+    	try{
+    		$guzzleClient = new \GuzzleHttp\Client();
+			$response = $guzzleClient->get('http://rss.cnn.com/rss/edition_world.rss');
+			$body = $response->getBody();
+			//return $this->removeNamespaceFromXML($body);
+			return json_encode(simplexml_load_string($this->removeNamespaceFromXML($body),null,LIBXML_NOCDATA));	
+    	} catch(Exception $e){
+
+    	}
+    	
     }
 
 

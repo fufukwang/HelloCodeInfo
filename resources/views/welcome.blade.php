@@ -26,7 +26,7 @@
             <h2>We are doing something new!! Comming Soon</h2>
           </div>
 
-          <div id="countdown" data-date="May 31, 2017 18:00:00"></div>
+          <div id="countdown" data-date="July 31, 2017 18:00:00"></div>
           <h2 class="subs-title text-center">We are welcome to write to us!!! </h2>
         </div>
       </div>
