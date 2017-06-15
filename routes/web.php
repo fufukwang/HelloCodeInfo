@@ -34,3 +34,9 @@ Route::group(['domain' => 'funee.'.$url], function() {
 	Route::get('/', 'FuneeController@index');
 	Route::post('/getRssUrl','FuneeController@getRssUrl');
 });
+
+
+
+Route::group(['domain' => 'liebel.'.$url], function() {
+	Route::post('/update.xml', 'LiebelController@grXml');	
+});
