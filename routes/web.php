@@ -40,3 +40,8 @@ Route::group(['domain' => 'funee.'.$url], function() {
 Route::group(['domain' => 'liebel.'.$url], function() {
 	Route::post('/update.xml', 'LiebelController@grXml');	
 });
+
+
+Route::group(['domain' => 'fabric.'.$url], function() {
+	Route::get('/', 'FabricController@home');	
+});
