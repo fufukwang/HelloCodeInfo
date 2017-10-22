@@ -19,9 +19,6 @@ if(App::environment('local')) {
 }
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::post('/contactus', 'HelloCodeController@ContactUs');
 
 
@@ -44,4 +41,9 @@ Route::group(['domain' => 'liebel.'.$url], function() {
 
 Route::group(['domain' => 'fabric.'.$url], function() {
 	Route::get('/', 'FabricController@home');	
+});
+
+
+Route::get('/', function () {
+    return view('welcome');
 });
